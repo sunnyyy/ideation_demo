@@ -1,0 +1,16 @@
+.center {
+	text-align: center;
+}
+.container {
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+.box {
+	background: #eee;
+	border: 1px #ccc solid;
+}
+.icon {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+#mapid { height: 400px; }
