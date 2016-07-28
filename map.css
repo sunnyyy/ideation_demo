@@ -1,0 +1,22 @@
+.center {
+	text-align: center;
+}
+.container {
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+.row {
+	padding-left: 30px;
+}
+.box {
+	background: #eee;
+	border: 1px #ccc solid;
+	min-width: 20%;
+}
+.icon {
+	padding-top: 5px;
+	min-width: 40px;
+	font-size: 2em;
+	text-align: center;
+}
+#mapid { height: 400px; }

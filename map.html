@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sunnia Ye</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="map.css">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="box center">
+        <h1>Moments near me</h1>
+      </div>
+      <div id="mapid"></div>
+    </div>
+
+    <div class="">
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+      <p>
+      hi
+      </p>
+    </div>
+    
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="top">
+      <div class="container">
+        <div class="row">
+          <span class="col-xs-2 icon"><a href="#"><i class="fa fa-book" aria-hidden="true"></i></a></span>
+          <span class="col-xs-2 icon"><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a></span>
+          <span class="col-xs-3 icon"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></span>
+          <span class="col-xs-2 icon"><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+          <span class="col-xs-2 icon"><a href="#"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+    <script>
+      var layer = new L.StamenTileLayer("watercolor");
+      var map = L.map('mapid').setView([40.7829, -73.9654], 13);
+
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+      }).addTo(map);
+      map.addLayer(layer);
+
+      L.marker([40.7829, -73.9654]).addTo(map)
+        .bindPopup('"The more successfully a city mingles everyday diversity of uses and users in its everyday streets, the more successfully, casually (and economically) its people thereby enliven and support well-located parks that can thus give back grace and delight to their neighborhoods instead of vacuity."<br>- Jane Jacobs, The Death and Life of Great American Cities')
+        .openPopup();
+
+      L.marker([40.762983, -73.973870]).addTo(map)
+        .bindPopup('"Just because life is hard, and always ends in a bad way, doesn\'t mean that all stories have to, even if that\'s what they tell us in school and in the New York Times Review. In fact, it\'s a good thing that stories are as different as we are, one from another."<br>- James Patterson, Sundays at Tiffany\'s');
+
+      L.marker([40.7128, -74.0059]).addTo(map)
+        .bindPopup('"If Washington expected relief from Hamilton badgering him for an appointment, he soon learned otherwise. Hamilton was fully prepared to become a pest."<br>― Ron Chernow, Alexander Hamilton');
+    </script>
+
+  </body>
+</html>
