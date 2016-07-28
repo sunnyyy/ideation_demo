@@ -1,29 +1,9 @@
-.center {
-	text-align: center;
-}
+
 .container {
 	margin: 0px 0px;
 	padding: 0px 0px;
 }
-.row_nav {
-	padding-left: 30px;
-}
-.col-xs-6 {
-	padding: 5px 5px;
-}
-.box {
-	background: #eee;
-	border: 1px #ccc solid;
-}
-.icon {
-	padding-top: 5px;
-	min-width: 40px;
-	font-size: 2em;
-	text-align: center;
-}
-.icon_active {
-	background: #eee;
-}
+
 #mapid {
 	height: 50vh;
 }

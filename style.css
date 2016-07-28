@@ -1,0 +1,18 @@
+.center {
+	text-align: center;
+}
+a.orange:link, a.orange:hover, a.orange:visited, a.orange:active {
+	color: #ff9900;
+}
+.icon_active {
+	background: #eee;
+}
+.navbar_app {
+	margin: 0px 0px;
+	padding-top: 5px;
+	min-width: 19%;
+	min-height: 50px;
+	display: inline-block;
+	font-size: 2em;
+	text-align: center;
+}

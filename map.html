@@ -110,14 +110,12 @@
     </div>
     
     <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="top">
-      <div class="container">
-        <div class="row row_nav">
-          <span class="col-xs-2 icon"><a href="#"><i class="fa fa-book" aria-hidden="true"></i></a></span>
-          <span class="col-xs-2 icon"><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a></span>
-          <span class="col-xs-3 icon icon_active"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></span>
-          <span class="col-xs-2 icon"><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
-          <span class="col-xs-2 icon"><a href="#"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></span>
-        </div>
+      <div class="row row_nav">
+        <span class="col-xs-2 icon"><a href="#"><i class="fa fa-book" aria-hidden="true"></i></a></span>
+        <span class="col-xs-2 icon"><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a></span>
+        <span class="col-xs-3 icon icon_active"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></span>
+        <span class="col-xs-2 icon"><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+        <span class="col-xs-2 icon"><a href="#"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></span>
       </div>
     </nav>
 
@@ -129,14 +127,12 @@
     <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
 
     <script>
-      var layer = new L.StamenTileLayer("watercolor");
       var map = L.map('mapid').setView([40.761701, -73.977654], 13);
 
       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 18,
       }).addTo(map);
-      map.addLayer(layer);
 
       L.marker([40.761701, -73.977654]).addTo(map)
         .bindPopup('You are here.')

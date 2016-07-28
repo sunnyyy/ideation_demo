@@ -1,0 +1,50 @@
+.center {
+	text-align: center;
+}
+.media_image {
+	padding: auto auto;
+}
+#panorama {
+    background:url(centralpark_xs.jpg) repeat-x top left;
+    height:50vh;
+    width:100%;
+    margin: auto auto;
+}
+.vspace {
+	height: 5px;
+}
+.play_bar {
+	padding: 0px 10%;
+}
+.icon {
+	font-size: 2em;
+}
+.play_icon {
+	color: #ff9900;
+}
+.progress {
+	margin-top: 15px;
+	height: 5px;
+}
+.thumbs_down {
+	color: #cc0000;
+}
+.thumbs_up {
+	color: #009933;
+}
+#drop_button {
+	background: #00cc66;
+}
+#share_button {
+	background: #0066cc;
+}
+
+.button_bar {
+	padding-top: 15px;
+	height: 50px;
+	font-size: 1.2em;
+	text-align: center;
+}
+.whitelink:active, .whitelink:hover, .whitelink:visited, .whitelink:link {
+	color: #fff;
+}
