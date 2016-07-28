@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Sunnia Ye</title>
+    <title>Drop page</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,28 +22,45 @@
       <div class="box center">
         <h1>Drop it like it's hot</h1>
       </div>
-      <div id="box center">
+      <div class="center">
         <div class="row">
-          <div class="col-md-4">
+          Name of clip
+        </div>
+        <div class="row">
+          <!-- <div class="col-xs-4">
             <img src="book_cover_art.jpg" width="100px" height="100px" />
           </div>
-          <div class="col-md-8">
-            
+          <div class="col-xs-8">
+            <video width="320" height="10" controls>
+            </video>
+          </div> -->
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" src="book_cover_art.jpg" width="100px" height="100px" alt="book cover art">
+              </a>
+            </div>
+            <div class="media-body">
+              <video width="320" height="10" controls>
+                <source>
+              </video>
+            </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" id="spacing"></div>
+        <div class="row drop-btn">
           <div class="col-md-12">
-            <button type="button" class="btn btn-primary">Add a picture</button>
+            <button type="button" class="btn btn-warning btn-block">Add a picture</button>
           </div>
         </div>
-        <div class="row">
+        <div class="row drop-btn">
           <div class="col-md-12">
-            <button type="button" class="btn btn-primary">Add a caption</button>
+            <button type="button" class="btn btn-primary btn-block">Add a caption</button>
           </div>
         </div>
-        <div class="row">
+        <div class="row drop-btn">
           <div class="col-md-12">
-            <button type="button" class="btn btn-primary">Share this moment</button>
+            <button type="button" class="btn btn-success btn-block">Share this moment</button>
           </div>
         </div>
       </div>
