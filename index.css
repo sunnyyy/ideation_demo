@@ -35,3 +35,16 @@
 }
 
 #mapid { height: 400px; }
+
+video {
+	display: block;
+}
+
+.media-left {
+	padding-left: 10px;
+}
+
+.btn-block {
+    display: inline-block;
+    width: 70%;
+}
