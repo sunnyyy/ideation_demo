@@ -54,7 +54,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				var NP = o.numPx;
 				
 				//auto scroll
-				var AS = o.auto;
+				var AS = true;
 				//controls for autoscroll
 				var AC = o.autoControls;
 								
@@ -66,8 +66,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				obj.addClass("panView");
 				
 				//autoscroll
-				if(AS == true)
-				{
+				if(AS == true) {
 					//determines the direction to scroll
 					//negative px for left/up, positive for right/down
 					if(SD == 'left' || SD == 'up')			{ NP = -NP;	}
@@ -89,68 +88,51 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 							return OP;
 						});
 					}
+				} else {	
+					//code for scrolling left
+					$(SN+" div.sLeft").click(function(){
+						//hides the controls so that you can't give it a heart attack clicking left 700 times
+						$(SN+" div.sCtrl").fadeOut();
+						obj.everyTime(SS, name, function(n) {
+							OP = OP-NP;
+							obj.css("background-position",OP+"px 0");
+							return OP;
+							});
+					});
+
+					//code for scrolling right
+					$("#"+SN+" div.sRight").click(function(){
+						$(SN+" div.sCtrl").fadeOut();
+						obj.everyTime(SS, name, function(n) {
+							OP = OP+NP;
+							obj.css("background-position",OP+"px 0");
+							return OP;
+							});
+					});
+					
+					//code for scrolling up
+					$("#"+SN+" div.sUp").click(function(){
+						$(SN+" div.sCtrl").fadeOut();
+						obj.everyTime(SS, name, function(n) {
+							OP = OP-NP;
+							obj.css("background-position","0 "+OP+"px");
+							return OP;
+							});
+					});
+					//code for scrolling down
+					$("#"+SN+" div.sDown").click(function(){
+						$(SN+" div.sCtrl").fadeOut();
+						obj.everyTime(SS, name, function(n) {
+							OP = OP+NP;
+							obj.css("background-position","0 "+OP+"px");
+							return OP;
+							});
+					});
+					
+					//code for pause
+					$("#"+SN+" div.sPause").click(function(){ obj.stopTime(name); $(SN+" div.sCtrl").fadeIn(); });
 				}
-				
-				else
-				{
-
-				//add the scrolling controls
-				//for horizontal scrolling
-				if(SD == "left" || SD == "right")
-				{
-					obj.append('<div class="sLeft sCtrl" title="Scroll Left">Scroll Left</div><div class="sPause" title="Pause">Pause</div><div class="sRight sCtrl" title="Scroll Right">Scroll Right</div>');
-				}
-				//for vertical scrolling
-				else if(SD == "up" || SD == "down")
-				{
-					obj.append('<div class="sUp sCtrl" title="Scroll Up">Scroll Up</div><div class="sPause" title="Pause">Pause</div><div class="sDown sCtrl" title="Scroll Down">Scroll Down</div>');
-				}	
-						
-			//code for scrolling left
-			$(SN+" div.sLeft").click(function(){
-				//hides the controls so that you can't give it a heart attack clicking left 700 times
-				$(SN+" div.sCtrl").fadeOut();
-				obj.everyTime(SS, name, function(n) {
-					OP = OP-NP;
-					obj.css("background-position",OP+"px 0");
-					return OP;
-					});
 			});
-
-			//code for scrolling right
-			$("#"+SN+" div.sRight").click(function(){
-				$(SN+" div.sCtrl").fadeOut();
-				obj.everyTime(SS, name, function(n) {
-					OP = OP+NP;
-					obj.css("background-position",OP+"px 0");
-					return OP;
-					});
-			});
-			
-			//code for scrolling up
-			$("#"+SN+" div.sUp").click(function(){
-				$(SN+" div.sCtrl").fadeOut();
-				obj.everyTime(SS, name, function(n) {
-					OP = OP-NP;
-					obj.css("background-position","0 "+OP+"px");
-					return OP;
-					});
-			});
-			//code for scrolling down
-			$("#"+SN+" div.sDown").click(function(){
-				$(SN+" div.sCtrl").fadeOut();
-				obj.everyTime(SS, name, function(n) {
-					OP = OP+NP;
-					obj.css("background-position","0 "+OP+"px");
-					return OP;
-					});
-			});
-			
-			//code for pause
-			$("#"+SN+" div.sPause").click(function(){ obj.stopTime(name); $(SN+" div.sCtrl").fadeIn(); });
-						}
-			});
-
     	}
 	});
 })(jQuery);
