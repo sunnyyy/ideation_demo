@@ -1,6 +1,8 @@
 .book_title {
     font-weight: 700;
+    text-align: left;
 }
-.author_title {
+.book_author {
     line-height: 2em;
+    text-align: left;
 }

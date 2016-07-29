@@ -31,3 +31,7 @@ a.white:active, a.white:hover, a.white:visited, a.white:link {
 	font-size: 2em;
 	text-align: center;
 }
+
+.media-left {
+	padding-left: 10px;
+}
