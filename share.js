@@ -17,9 +17,9 @@
 //     //  At the end, we add return false so that the click on the link is not executed
 //     return false;
 // });
-function toggle_visibility() {
-    var a = document.getElementById('tab1');
-    var b = document.getElementById('tab2');
+function toggle_visibility(tab1, tab2) {
+    var a = document.getElementById(tab1);
+    var b = document.getElementById(tab2);
     if (a.style.display == 'block') {
         a.style.display = 'none';
         b.style.display = 'block';

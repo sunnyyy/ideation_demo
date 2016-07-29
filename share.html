@@ -32,22 +32,25 @@
       <div class="row center bottom_border"><h2>Audible Moments</h2></div>
       <div class="row center bottom_border">
         <div class="col-xs-6 center">
-          <h5 class="orange"><a class="orange" onclick="toggle_visibility()">Share a moment</a></h5>
+          <h5 class="orange"><a class="orange" onclick="toggle_visibility('tab1', 'tab2')">Share a moment</a></h5>
         </div>
         <div class="col-xs-6 center" class="orange">
-          <h5 class="orange"><a class="orange" onclick="toggle_visibility()">Moments near me</a></h5>
+          <h5 class="orange"><a class="orange" onclick="toggle_visibility('tab2', 'tab1')">Moments near me</a></h5>
         </div>
       </div>
       <div class="vspace"></div>
       <div id="moments_content">
         <div id="tab1" >
-
-          <div class="col-xs-12">
-            <button type="button" class="btn btn-warning btn-block">Create a Moment</button>
+          <div class="row">
+            <div class="col-xs-12">
+              <a class="btn btn-warning btn-block" href="drop.html" role="button">Create a moment</a>
+            </div>
           </div>
-          <span class="col-xs-12 center">
-            <h3>Your Moments collection</h3>
-          </span>
+          <div class="row">
+            <span class="col-xs-12 center">
+              <h3>Your Moments collection</h3>
+            </span>
+          </div>
           <!--book #0-->
           <div class="media row">
             <div class="media-left">
@@ -56,6 +59,7 @@
             <div class="media-body">
               <p class="book_title">Water for Elephants <i class="fa fa-share-alt" aria-hidden="true"></i></p>
               <p class="book_author">By Sara Gruen</p>
+              <br>
               <video width="90%" height="10" controls></video>
             </div>
           </div>
@@ -67,6 +71,7 @@
             <div class="media-body">
               <p class="book_title">Harry Potter and the Philosopher's Stone <i class="fa fa-share-alt" aria-hidden="true"></i></p>
               <p class="book_author">By J.K. Rowling</p>
+              <br>
               <video width="90%" height="10" controls></video>
             </div>
           </div>
@@ -78,6 +83,7 @@
             <div class="media-body">
               <p class="book_title">Me Before You <i class="fa fa-share-alt" aria-hidden="true"></i></p>
               <p class="book_author">By Jojo Moyes</p>
+              <br>
               <video width="90%" height="10" controls></video>
             </div>
           </div>
@@ -89,6 +95,7 @@
             <div class="media-body">
               <p class="book_title">Harry Potter and the Order of the Phoenix <i class="fa fa-share-alt" aria-hidden="true"></i></p>
               <p class="book_author">By J.K. Rowlings</p>
+              <br>
               <video width="90%" height="10" controls></video>
             </div>
           </div>
@@ -100,6 +107,7 @@
             <div class="media-body">
               <p class="book_title">The Fault in Our Stars <i class="fa fa-share-alt" aria-hidden="true"></i></p>
               <p class="book_author">By John Green</p>
+              <br>
               <video width="90%" height="10" controls></video>
             </div>
           </div>
@@ -111,6 +119,7 @@
             <div class="media-body">
               <p class="book_title">Between the World and Me <i class="fa fa-share-alt" aria-hidden="true"></i></p>
               <p class="book_author">By Ta-Nehisi Coates</p>
+              <br>
               <video width="90%" height="10" controls></video>
             </div>
           </div>
@@ -122,6 +131,7 @@
             <div class="media-body">
               <p class="book_title">Mockingjay <i class="fa fa-share-alt" aria-hidden="true"></i></p>
               <p class="book_author">By Suzanne Collins</p>
+              <br>
               <video width="90%" height="10" controls></video>
             </div>
           </div>
@@ -129,11 +139,16 @@
         <div id="tab2" class="">
             <div id="mapid" style="width:100%; height:300px"></div>
             <ul class="list-group">
-              <li class="list-group-item">[Friend's name] dropped a clip near [place]</li>
-              <li class="list-group-item">[Friend's name] dropped a clip near [place]</li>
-              <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
-              <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
-              <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
+              <br>
+              <li class="list-group-item">Your friend Anni dropped a Moment near Central Park!</li>
+              <br>
+              <li class="list-group-item">Your friend Bobby dropped a Moment near Town Hall!</li>
+              <br>
+              <li class="list-group-item">Cathy dropped a Moment near Times Square.</li>
+              <br>
+              <li class="list-group-item">Drew dropped a Moment near 5th Ave.</li>
+              <br>
+              <li class="list-group-item">Evan dropped a Moment near Columbia Business School.</li>
             </ul>
         </div>
       </div>
@@ -154,13 +169,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="http://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>    
-    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
-
+    <script src="http://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
     <script>
       var map = L.map('mapid').setView([40.761701, -73.977654], 13);
 
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,              
+      }).addTo(map);
+      map.addLayer(layer);
 
       L.marker([40.761701, -73.977654]).addTo(map)
         .bindPopup('You are here.')
