@@ -15,8 +15,6 @@
 }
 .play_bar {
 	padding: 0px 10%;
-}
-.icon {
 	font-size: 2em;
 }
 .play_icon {
@@ -44,7 +42,4 @@
 	height: 50px;
 	font-size: 1.2em;
 	text-align: center;
-}
-.whitelink:active, .whitelink:hover, .whitelink:visited, .whitelink:link {
-	color: #fff;
 }

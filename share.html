@@ -14,95 +14,131 @@
     <![endif]-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
-    <link rel="stylesheet" type="text/css" href="share.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="share.css">
+    
 
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="top">
+      <div class="navbar_app"><i class="fa fa-bars" aria-hidden="true"></i></div>
+      <div class="navbar_app"><i class="fa" aria-hidden="true"></i></div>
+      <div class="navbar_app"><img src="audible_orange.png" width="40px"></div>
+      <div class="navbar_app"><i class="fa" aria-hidden="true"></i></div>
+      <div class="navbar_app"><i class="fa fa-search" aria-hidden="true"></i></div>
+    </nav>
 
     <div class="container">
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="top">
-        <div class="container">
-          <div class="row center">
-            <h1>Audible Moments</h1>
-          </div>
-          <div class="row center">
-            <div id="mtabs" class="row">
-            <div class="col-xs-6 center">
-              <h5>
-                <a href="#tab1" rel="tab1" class="orange">
-                  Share a moment
-                </a>
-              </h5>
-            </div>
-            <div class="col-xs-6 center" class="orange">
-              <h5>
-                <a href="#tab2" rel="tab2">Moments near me</a>
-              </h5>
-            </div>
-          </div>
+      <div class="row center bottom_border"><h2>Audible Moments</h2></div>
+      <div class="row center bottom_border">
+        <div class="col-xs-6 center">
+          <h5 class="orange"><a class="orange" onclick="toggle_visibility()">Share a moment</a></h5>
         </div>
-      </nav>
-      
-      
-      <div class="row">
-        <div id="mtabs_content_container">
-            <div id="tab1" class="mtab_content active">
-              <div class="row drop-btn">
-                <div class="col-md-12">
-                  <button type="button" class="btn btn-primary btn-block">Create a clip to drop</button>
-                </div>
-              </div>
-              <div class="media">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="book_cover_art.jpg" width="100px" height="100px" alt="book cover art">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <p>Name of clip</p>
-                  <video width="70%" height="10" controls>
-                  </video>
-                </div>
-              </div>
-              <div class="media">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="book_cover_art_2.jpg" width="100px" height="100px" alt="book cover art">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <video width="70%" height="10" controls>
-                  </video>
-                </div>
-              </div>
-              <div class="media">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="book_cover_art.jpg" width="100px" height="100px" alt="book cover art">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <video width="70%" height="10" controls>
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div id="tab2" class="mtab_content">
-                <div id="mapid" style="width:100%; height:300px"></div>
-                <ul class="list-group">
-                  <li class="list-group-item">[Friend's name] dropped a clip near [place]</li>
-                  <li class="list-group-item">[Friend's name] dropped a clip near [place]</li>
-                  <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
-                  <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
-                  <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
-                </ul>
-            </div>
+        <div class="col-xs-6 center" class="orange">
+          <h5 class="orange"><a class="orange" onclick="toggle_visibility()">Moments near me</a></h5>
         </div>
       </div>
+      <div class="vspace"></div>
+      <div id="moments_content">
+        <div id="tab1" >
+
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-warning btn-block">Create a Moment</button>
+          </div>
+          <span class="col-xs-12 center">
+            <h3>Your Moments collection</h3>
+          </span>
+          <!--book #0-->
+          <div class="media row">
+            <div class="media-left">
+              <img class="media-object" src="pix/ellyfant.jpg" width="100px" height="100px" alt="book cover art">
+            </div>
+            <div class="media-body">
+              <p class="book_title">Water for Elephants <i class="fa fa-share-alt" aria-hidden="true"></i></p>
+              <p class="book_author">By Sara Gruen</p>
+              <video width="90%" height="10" controls></video>
+            </div>
+          </div>
+          <!--book #1-->
+          <div class="media row">
+            <div class="media-left">
+              <img class="media-object" src="pix/hp1.jpg" width="100px" height="100px" alt="book cover art">
+            </div>
+            <div class="media-body">
+              <p class="book_title">Harry Potter and the Philosopher's Stone <i class="fa fa-share-alt" aria-hidden="true"></i></p>
+              <p class="book_author">By J.K. Rowling</p>
+              <video width="90%" height="10" controls></video>
+            </div>
+          </div>
+          <!--book #2-->
+          <div class="media row">
+            <div class="media-left">
+              <img class="media-object" src="pix/meb4u.jpg" width="100px" height="100px" alt="book cover art">
+            </div>
+            <div class="media-body">
+              <p class="book_title">Me Before You <i class="fa fa-share-alt" aria-hidden="true"></i></p>
+              <p class="book_author">By Jojo Moyes</p>
+              <video width="90%" height="10" controls></video>
+            </div>
+          </div>
+          <!--book #3-->
+          <div class="media row">
+            <div class="media-left">
+              <img class="media-object" src="pix/hp5.jpg" width="100px" height="100px" alt="book cover art">
+            </div>
+            <div class="media-body">
+              <p class="book_title">Harry Potter and the Order of the Phoenix <i class="fa fa-share-alt" aria-hidden="true"></i></p>
+              <p class="book_author">By J.K. Rowlings</p>
+              <video width="90%" height="10" controls></video>
+            </div>
+          </div>
+          <!--book #4-->
+          <div class="media row">
+            <div class="media-left">
+              <img class="media-object" src="pix/tfios.jpg" width="100px" height="100px" alt="book cover art">
+            </div>
+            <div class="media-body">
+              <p class="book_title">The Fault in Our Stars <i class="fa fa-share-alt" aria-hidden="true"></i></p>
+              <p class="book_author">By John Green</p>
+              <video width="90%" height="10" controls></video>
+            </div>
+          </div>
+          <!--book #5-->
+          <div class="media row">
+            <div class="media-left">
+              <img class="media-object" src="pix/coates.jpg" width="100px" height="100px" alt="book cover art">
+            </div>
+            <div class="media-body">
+              <p class="book_title">Between the World and Me <i class="fa fa-share-alt" aria-hidden="true"></i></p>
+              <p class="book_author">By Ta-Nehisi Coates</p>
+              <video width="90%" height="10" controls></video>
+            </div>
+          </div>
+          <!--book #6-->
+          <div class="media row">
+            <div class="media-left">
+              <img class="media-object" src="pix/mockjay.jpg" width="100px" height="100px" alt="book cover art">
+            </div>
+            <div class="media-body">
+              <p class="book_title">Mockingjay <i class="fa fa-share-alt" aria-hidden="true"></i></p>
+              <p class="book_author">By Suzanne Collins</p>
+              <video width="90%" height="10" controls></video>
+            </div>
+          </div>
+        </div>
+        <div id="tab2" class="">
+            <div id="mapid" style="width:100%; height:300px"></div>
+            <ul class="list-group">
+              <li class="list-group-item">[Friend's name] dropped a clip near [place]</li>
+              <li class="list-group-item">[Friend's name] dropped a clip near [place]</li>
+              <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
+              <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
+              <li class="list-group-item">Anonymous dropped a clipe near [place]</li>
+            </ul>
+        </div>
       </div>
 
-    </div>
+    </div><!--container-->
     
     <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
       <div class="">
